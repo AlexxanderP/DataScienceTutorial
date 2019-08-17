@@ -57,7 +57,48 @@ Step 11: Look at churn rate based on Customer Service Calls *plt.scatter(data['C
 
 Step 12: Look at churn rate based on phone call usage during times of the day *data.groupby('Churn').mean()[['Day Mins', 'Eve Mins', 'Night Mins']].plot(kind='bar')*
 
-Step 13: 
+Step 13: 3D graphs *from mpl_toolkits import mplot3d
 
+fig = plt.figure()
+ax = plt.axes(projection='3d')*
 
+Step 14:*y = data.Churn*
+        *x = data[['CustServ Calls', 'Account Length','Day Mins']]*
+        *x.info()*
 
+Step 15: Set Up/Train Algorithm
+         *from sklearn.tree import DecisionTreeClassifier*
+         *t = DecisionTreeClassifier()*
+         *t.fit(x,y)*
+
+Step 16: t.predict([[1,90,100]]) (Number of CustServ calls, Account Length, Num of Mins) Have algorithm predict if they will churn
+            -Algorithm Predicts the customer wont leave-
+
+Step 17: Test/Evaluate algorithm against previous cases
+
+(Predict on X data frame) then compare with originals
+
+Step 18: *t.feature_importances_* will show you importance of different features
+
+Step 19: *x.columns*
+    Index(['CustServ Calls', 'Account Length', 'Day Mins'], dtype='object')
+
+Step 20: *list(t.predict(x))* Allow algorithm to predict whether customers will leave
+
+Step 21: check accuracy 
+        Import Accuracy *from sklearn.metrics import accuracy_score*
+        Check Accuracy *accuracy_score(y,t.predict(x))*
+
+Step 22: Create Test Database
+        *from sklearn.model_selection import train_test_split
+        x_train, x_test, y_train, y_test = train_test_split(x,y, test_size=.25, random_state=0)*
+
+Step 23: How many Rows vs. Columns 
+        *x_train.shape, y_train.shape, x_test.shape, y_test.shape*
+
+Step 24: Run Algorithm and test it
+            Modeling
+        *t_r = DecisionTreeClassifier()
+         t_r.fit(x_train,y_train)*
+
+Step 25: 
