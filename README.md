@@ -43,6 +43,21 @@ Step 4: Pull Down Column Names *Data.info()*
 
 Step 5: *data['State'].nunique()* 51
 
-Step 6: 
+Step 6: Descriptive Statistics Summary *Data.Describe()*
+
+Step 7: Correlation between different columns *data.corr()*
+
+Step 8: Filter to show just churn *data.corr()['Churn'].sort_values()*
+
+Step 9: *plt.hist(data['Account Length'], bins=50);*
+
+Step 10: Look at churn rate based on Account Length *plt.scatter(data['Account Length'], data['Churn'])*
+
+Step 11: Look at churn rate based on Customer Service Calls *plt.scatter(data['CustServ Calls'], data['Churn'])*
+
+Step 12: Look at churn rate based on phone call usage during times of the day *data.groupby('Churn').mean()[['Day Mins', 'Eve Mins', 'Night Mins']].plot(kind='bar')*
+
+Step 13: 
+
 
 
